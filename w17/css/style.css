@@ -1,0 +1,392 @@
+body {
+    font-family: "Noto Serif Hentaigana", Tahoma, Geneva, Verdana, sans-serif; /* Sets the preferred font family for the body text. */
+    background-color: #A4161A; /* Defines the background color of the entire page - Deep Red */
+    color: #161A1D; /* Sets the default text color for the body - Dark Gray */
+    line-height: 1.4; /* Adjusts the spacing between lines of text for readability. */
+    margin: 0; /* Removes default browser margin around the body. */
+    padding: 20px; /* Adds padding around the content within the body. */
+    display: flex; /* Establishes a flex container for direct children. */
+    justify-content: center; /* Horizontally centers content within the body. */
+    align-items: flex-start; /* Aligns items to the start of the cross axis (top for column flex). */
+    min-height: 100vh; /* Ensures the body takes at least the full height of the viewport. */
+}
+
+.container {
+    background-color: #ffffff; /* Sets the background color of the container. */
+    padding: 30px; /* Adds padding inside the container. */
+    border-radius: 10px; /* Rounds the corners of the container. */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Applies a subtle shadow to the container. */
+    width: 100%; /* Makes the container take up the full available width. */
+    max-width: 750px; /* Limits the maximum width of the container. */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height. */
+}
+
+h1 {
+    color: #A4161A; /* Deep Red for main headings */
+    text-align: center; /* Centers the main heading. */
+    margin-top: 0; /* Removes top margin from the heading. */
+    font-size: 2.2em;
+}
+
+h2 {
+    color: #161A1D; /* Dark Gray for secondary headings */
+    border-bottom: 2px solid #B1A7A6; /* Light Gray bottom border for separation */
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    margin-top: 0;
+    color: #A4161A;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #A4161A;
+    padding: 0 10px;
+    margin-left: -10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.radio-group-heading {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+    width: auto; 
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+button[type="submit"],
+.secondary-button {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: #A4161A;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #7d1215;
+}
+
+.secondary-button {
+    background-color: #f0f0f0;
+    color: #161A1D;
+    border: 1px solid #ccc;
+}
+
+.secondary-button:hover {
+    background-color: #e0e0e0;
+}
+
+.danger-button {
+    background-color: #cc0000;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.danger-button:hover {
+    background-color: #990000;
+}
+
+.confirm-state {
+    background-color: #ff9900 !important;
+    color: #161A1D !important;
+}
+
+.results-container {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #A4161A;
+    border-radius: 8px;
+    background-color: #fff9fa;
+}
+
+.highlight-total {
+    background-color: #A4161A;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.highlight-total p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.results-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.results-container li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.results-container li:last-child {
+    border-bottom: none;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.table-container {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#budgetTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed;
+}
+
+#budgetTable thead th {
+    background-color: #A4161A;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+#budgetTable tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.1s ease;
+}
+
+#budgetTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#budgetTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#budgetTable td {
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word;
+    font-size: 0.9em;
+}
+
+#budgetTable col:nth-child(1) { width: 10%; } /* Date */
+#budgetTable col:nth-child(2) { width: 15%; } /* Experience */
+#budgetTable col:nth-child(3) { width: 15%; } /* Genre */
+#budgetTable col:nth-child(4) { width: 15%; } /* Performance */
+#budgetTable col:nth-child(5) { width: 15%; } /* Existing Gear */
+#budgetTable col:nth-child(6) { width: 15%; } /* Budget */
+#budgetTable col:nth-child(7) { width: 15%; } /* Actions */
+
+.action-cell {
+    white-space: nowrap;
+}
+
+.action-cell button {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.edit-button {
+    background-color: #161A1D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #444;
+}
+
+.delete-confirm-group {
+    display: inline-flex;
+    gap: 5px;
+}
+.delete-confirm-group .confirm-state {
+    background-color: #cc0000 !important;
+    color: white !important;
+}
+
+.error-message {
+    color: #A4161A;
+    font-size: 0.85em;
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.error {
+    border: 2px solid #A4161A !important;
+}
+
+.api-content {
+    text-align: center;
+}
+
+.font-extrabold {
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
+.text-dark-grey { color: #161A1D; } 
+
+.text-note-grey { color: #666666; } 
+
+.text-brand-red { color: #A4161A; } 
+
+.text-danger-red { color: #cc0000; } 
+
+.text-muted-grey { color: #B1A7A6; }
+
+.timestamp-container {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #888;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.5em; 
+    }
+    button[type="submit"], .secondary-button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .button-group {
+        flex-direction: column; 
+    }
+    #budgetTable, .table-container {
+        overflow-x: auto;
+    }
+    #budgetTable thead {
+        display: none;
+    }
+    #budgetTable, #budgetTable tbody, #budgetTable tr, #budgetTable td {
+        display: block;
+        width: 100%;
+    }
+    #budgetTable col:nth-child(1),
+    #budgetTable col:nth-child(2),
+    #budgetTable col:nth-child(3),
+    #budgetTable col:nth-child(4),
+    #budgetTable col:nth-child(5),
+    #budgetTable col:nth-child(6),
+    #budgetTable col:nth-child(7) { 
+        width: auto;
+    }
+
+    #budgetTable tr {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    #budgetTable td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #budgetTable td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #161A1D;
+    }
+    .action-cell {
+        text-align: left !important;
+        padding-left: 10px;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+    }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Gear Budget</title>
+    <script type="module" src="js/app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hentaigana:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Music Gear Budget</h1>
+        <p>Find out what budget best suits your musical gear needs.</p>
+
+        <section id="weather-display" class="results-container" style="display: none;">
+            <h2>Weather Forecast</h2>
+            <div class="api-content">
+                <p><strong>Location:</strong> <span id="weatherLocation">Locating...</span></p>
+                <p><strong>Condition:</strong> <span id="currentWeatherValue">--</span></p>
+                <p id="weatherStatusMessage" class="note">Checking outdoor performance conditions...</p>
+                <div class="timestamp-container">
+                    <small>Last Updated: <span id="weatherDate">--</span></small>
+                </div>
+            </div>
+        </section>
+
+        <form id="budgetForm" novalidate>
+            <input type="hidden" id="entryId"> 
+
+            <fieldset>
+                <legend>Experience Level</legend>
+                <div class="form-group">
+                    <p class="radio-group-heading">What is your musical experience level?:</p>
+                    <div class="radio-group">
+                        <label for="beginner">
+                            <input type="radio" id="beginner" name="experience" value="beginner">
+                            Beginner
+                        </label>
+                        <label for="intermediate">
+                            <input type="radio" id="intermediate" name="experience" value="intermediate">
+                            Intermediate
+                        </label>
+                        <label for="professional">
+                            <input type="radio" id="professional" name="experience" value="professional">
+                            Professional
+                        </label>
+                    </div>
+                    <span id="experienceError" class="error-message"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Genre</legend>
+                <div class="form-group">
+                    <label for="genre">What genre of music do you play?:</label>
+                    <select id="genre">
+                        <option value="">-- Select a Genre --</option>
+                        <option value="hip-hop">Hip-Hop</option>
+                        <option value="rock">Rock</option>
+                        <option value="country">Country</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="pop">Pop</option>
+                    </select>
+                    <span id="genreError" class="error-message"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Performance Type</legend>
+                <div class="form-group">
+                    <p class="radio-group-heading">What is your performance environment/type?:</p>
+                    <div class="radio-group">
+                        <label for="bedroomMusician">
+                            <input type="radio" id="bedroomMusician" name="performance" value="bedroomMusician">
+                            Bedroom Musician
+                        </label>
+                        <label for="garageBand">
+                            <input type="radio" id="garageBand" name="performance" value="garageBand">
+                            Garage Band
+                        </label>
+                        <label for="clubArtist">
+                            <input type="radio" id="clubArtist" name="performance" value="clubArtist">
+                            Club Artist
+                        </label>
+                        <label for="arenaAct">
+                            <input type="radio" id="arenaAct" name="performance" value="arenaAct">
+                            Arena Act
+                        </label>
+                    </div>
+                    <span id="performanceError" class="error-message"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Existing Gear Credit</legend>
+                <div class="form-group">
+                    <label for="existingGearCost">Enter the estimated value of your existing gear (e.g., $500):</label>
+                    <input type="text" id="existingGearCost" placeholder="e.g., 500" value="0"> 
+                    <span id="existingGearCostError" class="error-message"></span> 
+                    <p class="note">This value will be subtracted from the final recommended budget.</p>
+                </div>
+            </fieldset>
+            
+            <div class="button-group">
+                <button type="submit" id="submitButton" class="primary-button">Calculate Budget</button>
+                <button type="button" id="clearFormButton" class="secondary-button">Clear Form</button>
+            </div>
+        </form>
+
+        <section id="results" class="results-container" style="display: none;">
+            <h2>Calculation Result</h2>
+            <div class="highlight-total">
+                <p id="budgetResult">Recommended Budget: $0</p>
+            </div>
+            <div class="results-breakdown">
+                <h3>Calculation Breakdown:</h3>
+                <ul>
+                    <li id="experienceResult">Experience: None</li>
+                    <li id="genreResult">Genre: None</li>
+                    <li id="performanceTypeResult">Performance: None</li>
+                    <li id="existingGearResult">Existing Gear: None</li> 
+                </ul>
+            </div>
+            <p class="note"><em>These results are purely suggestive. Whatever gear you end up choosing is entirely up to you.</em></p>
+        </section>
+
+        <section class="table-container">
+                <h2>Your Saved Budget Entries</h2>
+                <button type="button" id="clearAllDataButton" class="danger-button" style="display: block;">Clear All Saved Data</button>
+                <table id="budgetTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Experience Level</th>
+                            <th>Genre</th>
+                            <th>Performance Type</th>
+                            <th>Existing Gear Value ($)</th>
+                            <th>Budget ($)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <p id="noEntriesMessage" class="note" style="display: block;">No entries saved yet.</p>
+            </section>
+    </main>
+</body>
+</html>
